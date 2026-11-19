@@ -1,0 +1,6 @@
+target/
+.openjfx/
+*.class
+.DS_Store
+.idea/
+*.iml
