@@ -409,6 +409,10 @@ public final class LcdRenderer {
             case 'R' -> E | G;
             case 'X' -> B | C | E | F | G;
             case 'Y' -> B | C | D | F | G;
+            case 'I' -> B | C; // or V1 | V2, standard 7-seg 'I' is right-hand '1' (B|C) or center vert (V1|V2); B|C matches Casio style
+            case 'S' -> A | F | G | C | D;
+            case 'O' -> A | B | C | D | E | F;
+            case 'U' -> B | C | D | E | F;
             case '°', '’', '”' -> A | B | F | G;
             default -> 0;
         };

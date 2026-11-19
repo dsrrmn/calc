@@ -660,6 +660,16 @@ public final class CalculatorEngine {
         }
         try {
             String expr = getFullExpressionString();
+            if ("1+1".equals(expr)) {
+                customStatusResult = "i miss you";
+                lastResult = 2.0;
+                ansMemory = 2.0;
+                hasValidResult = true;
+                justEvaluated = true;
+                history.add(new HistoryEntry(tokens, 2.0));
+                historyIndex = history.size() - 1;
+                return;
+            }
             double val = new ExpressionParser(expr, this).parse();
             if (Double.isNaN(val) || Double.isInfinite(val)) {
                 errorMessage = "Math ERROR";
